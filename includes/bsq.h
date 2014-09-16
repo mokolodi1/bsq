@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:47:22 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 16:11:28 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 17:17:24 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef struct		s_terrain
 	char	**map;
 	size_t	width;
 	size_t	height;
+	char	empty;
+	char	obstacle;
+	char	full;
 }					t_terrain;
 
 /*
