@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:56:46 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 18:12:54 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 18:16:28 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 **	init_board
 **	Mallocs a new board to the correct size
+**	Will never call from anywhere else: not in .h
 */
 
 t_board		*init_board(t_terrain *terrain)
