@@ -6,7 +6,7 @@
 /*   By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/10 12:44:52 by tgauvrit          #+#    #+#             */
-/*   Updated: 2014/09/10 12:44:53 by tgauvrit         ###   ########.fr       */
+/*   Updated: 2014/09/16 12:30:56 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_list			*ft_create_elem(void *data);
 t_list			*ft_list_last(t_list *begin_list);
 t_list			*ft_list_at(t_list *begin_list, unsigned int nbr);
 t_list			*ft_list_push_params(int ac, char **av);
+t_list			*ft_list_pop(t_list **begin_list)
 void			ft_list_push_front(t_list **begin_list, void *data);
 void			ft_list_push_back(t_list **begin_list, void *data);
 void			ft_list_clear(t_list **begin_list);
