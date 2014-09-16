@@ -6,11 +6,11 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/16 16:13:02 by tfleming         ###   ########.fr        #
+#    Updated: 2014/09/16 18:51:37 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			a.out
+NAME =			bsq
 
 FT_LIB_NAME =	ft
 
@@ -83,6 +83,7 @@ FT_COMPILED =	ft_atoi.o \
 
 COMPILED =		$(FT_COMPILED) \
 				$(LIST_COMPILED) \
+				$(FILE_COMPILED) \
 				$(EX_COMPILED)
 
 all: $(NAME)
