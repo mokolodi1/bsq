@@ -37,7 +37,7 @@ EX_COMPILED =	main.o \
 				strlen_list.o \
 				ft_strcat_sep.o \
 				ft_strappend.o \
-				get_next_line.o \
+				nab_next_line.o \
 				print_board.o
 
 FILE_SRC_DIR =	./srcs/lib/ft_file/

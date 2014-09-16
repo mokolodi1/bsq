@@ -14,19 +14,27 @@
 
 void	ft_strappend(char **str, size_t str_len, char *add, size_t add_len)
 {
-	char	*string;
+	char	*output;
+	size_t	i;
 
-	string = *str;
-	
-
-	length = ft_strlen(dest) + 1 + ft_strlen(sep);
-	str = (char*)malloc(sizeof(char) * (length + 1));
-	if (!str)
-		return (str);
-	*str = '\0';
-	ft_strcat_sep(str, dest, "");
-	ft_strcat_sep(str, sep, "");
-	str[length - 1] = src;
-	str[length] = '\0';
-	return (str);
+	//Malloc output string
+	output = (char*)malloc(sizeof(char) * (str_len + add_len + 1));
+	if (!output)
+		return (output);
+	//Copy first string
+	i = 0;
+	while ((*str)[i] != '\0')
+	{
+		output[i] = (*str)[i];
+		i++;
+	}
+	//Copy second string
+	while (*add != '\0')
+	{
+		output[i++] = *add;
+		add++;
+	}
+	//End string and 'return' it.
+	output[i] = '\0';
+	*str = output;
 }
