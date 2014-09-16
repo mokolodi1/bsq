@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:56:46 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 19:00:37 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 19:24:32 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_board		*pay_as_you_go(t_terrain *terrain)
 	out = 0;
 	while (out < terrain->height)
 	{
+		ft_putstr("in first while\n");//FIX
 		in = 0;
 		curr = 0;
 		while (in < terrain->width)
@@ -65,7 +66,6 @@ t_board		*pay_as_you_go(t_terrain *terrain)
 		}
 		out++;
 	}
-		
 	return (new_board);
 }
 
@@ -83,7 +83,7 @@ t_board		*check_the_map(t_terrain *terrain)
 
 	new_board = init_board(terrain);
 	out = 0;
-	while (out < terrain->height - 1)
+	while (out < terrain->height)
 	{
 		in = terrain->width;
 		curr = 0;
@@ -93,7 +93,7 @@ t_board		*check_the_map(t_terrain *terrain)
 				curr = 0;
 			else
 				curr++;
-			new_board->map[out][in] = curr;
+			new_board->map[out][in - 1] = curr;
 			in--;
 		}
 		out++;
