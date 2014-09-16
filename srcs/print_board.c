@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 15:40:39 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 16:08:52 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 16:29:52 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void		print_board(t_board *board, int num_width)
 			ft_putchars(' ', num_width
 						- num_of_digits(board->map[outer][inner]));
 			ft_putnbr(board->map[outer][inner]);
+			inner++;
 		}
+		ft_putchar('\n');
+		outer++;
 	}
 }
