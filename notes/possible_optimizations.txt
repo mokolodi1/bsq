@@ -1,0 +1,14 @@
+********************************************************************************
+                                                                                
+                                                          :::      ::::::::     
+     possible_optimizations.txt                         :+:      :+:    :+:     
+                                                      +:+ +:+         +:+       
+     By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+          
+                                                  +#+#+#+#+#+   +#+             
+     Created: 2014/09/16 17:52:20 by tfleming          #+#    #+#               
+     Updated: 2014/09/16 17:52:52 by tfleming         ###   ########.fr         
+                                                                                
+********************************************************************************
+
+gen_boards.c
+rewrite so it mallocs one line at a time (less time holding memory)
