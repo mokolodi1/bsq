@@ -6,16 +6,16 @@
 /*   By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/10 12:44:52 by tgauvrit          #+#    #+#             */
-/*   Updated: 2014/09/16 15:59:03 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 17:19:33 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_LIST_H
-# define	FT_LIST_H
+#ifndef			FT_LIST_H
+# define		FT_LIST_H
 
 # include <stdlib.h>
 
-typedef	struct	s_list
+typedef struct	s_list
 {
 	struct s_list	*next;
 	void			*data;
