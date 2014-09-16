@@ -28,10 +28,6 @@ int			read_all_to_out(char **file_names, int total);
 int			read_to_list(int fd, t_list **begin_list);
 int			strlen_list(t_list *str_list);
 void		ft_strcat_sep(char *dest, char *src, char *sep);
-char		*ft_strappend(char *dest, char src, char *sep);
 char		*str_catlist(t_list *str_list, char *sep, int length);
-char		*what_is(char *str);
-char		*is_colle(int num, int columns, int rows, char *input_str);
-char		*ft_itoa(int num);
 
 #endif

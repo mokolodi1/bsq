@@ -42,6 +42,9 @@ typedef struct		s_board
 	size_t	height;
 }					t_board;
 
+size_t				nab_next_line(int const fd, char **line, char **spill);
+char				*str_slice(char *fish, char knife);
+void				ft_strappend(char **str, size_t str_len, char *add, size_t add_len);
 void				print_terrain(t_terrain *terrain);
 void				print_board(t_board *board, int num_width);
 t_board				*init_board(t_terrain *terrain);

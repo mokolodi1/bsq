@@ -14,9 +14,9 @@
 
 size_t	nab_next_line(int const fd, char **line, char **spill)
 {
-	size_t			line_len;
-	size_t			ret;
+	int				ret;
 	char			buf[BUF_SIZE + 1];
+	size_t			line_len;
 	size_t			cut_len;
 	char			*line_cut;
 
@@ -32,7 +32,7 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 		cut_len = ft_strlen(line_cut);
 		ft_strappend(line, line_len, line_cut, cut_len);
 		line_len += cut_len;
-		if (cut_len < ret)
+		if (cut_len < (size_t)ret)
 			break ;
 	}
 	if (ret == -1)

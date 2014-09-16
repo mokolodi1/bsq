@@ -12,7 +12,7 @@
 
 #include	"bsq.h"
 
-char	*slice(char *fish, char knife)
+char	*str_slice(char *fish, char knife)
 {
 	size_t	i;
 	size_t	j;
