@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:56:46 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 18:16:28 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 19:00:37 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,21 @@
 
 t_board		*init_board(t_terrain *terrain)
 {
-	t_baord		*new_board;
+	t_board		*new_board;
 	size_t		i;
 
 	new_board = malloc(sizeof(t_board));
 	if (!new_board)
 		exit(ft_puterror("init_board()", "Not Enough Memory"));
 	new_board->width = terrain->width;
-	new_baord->height = terrain->height;
-	new_board->map = malloc(sizeof(int*) * height);
-	while (i < height)
-		new_board->map[i] = malloc(sizeof(int) * width);
+	new_board->height = terrain->height;
+	new_board->map = malloc(sizeof(int*) * new_board->height);
+	i = 0;
+	while (i < new_board->height)
+	{
+		new_board->map[i] = malloc(sizeof(int) * new_board->width);
+		i++;
+	}
 	return (new_board);
 }
 
@@ -51,9 +55,10 @@ t_board		*pay_as_you_go(t_terrain *terrain)
 	while (out < terrain->height)
 	{
 		in = 0;
+		curr = 0;
 		while (in < terrain->width)
 		{
-			if (terrain->map[out][in] == t_terrain->obstacle)
+			if (terrain->map[out][in] == terrain->obstacle)
 				curr++;
 			new_board->map[out][in] = curr;
 			in++;
@@ -82,9 +87,9 @@ t_board		*check_the_map(t_terrain *terrain)
 	{
 		in = terrain->width;
 		curr = 0;
-		while (in >= 0)
+		while (in > 0)
 		{
-			if (terrain->map[out][in] == t_terrain->obstacle)
+			if (terrain->map[out][in - 1] == terrain->obstacle)
 				curr = 0;
 			else
 				curr++;
