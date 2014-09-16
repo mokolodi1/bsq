@@ -37,7 +37,10 @@ EX_COMPILED =	main.o \
 				strlen_list.o \
 				ft_strcat_sep.o \
 				ft_strappend.o \
+				str_slice.o \
 				nab_next_line.o \
+				gen_boards.o \
+				print_terrain.o \
 				print_board.o
 
 FILE_SRC_DIR =	./srcs/lib/ft_file/
@@ -58,7 +61,8 @@ LIST_COMPILED =	ft_create_elem.o \
 				ft_list_push_front.o \
 				ft_list_push_params.o \
 				ft_list_reverse.o \
-				ft_list_size.o
+				ft_list_size.o \
+				ft_list_pop.o
 
 FT_SRC_DIR =	./srcs/lib/ft/
 
