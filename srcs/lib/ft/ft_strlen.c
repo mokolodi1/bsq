@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include	<ft.h>
+
+size_t	ft_strlen(char *str)
 {
-	int length;
+	size_t length;
 
 	length = 0;
 	while (*str != '\0')

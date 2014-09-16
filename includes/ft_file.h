@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   files.h                                            :+:      :+:    :+:   */
+/*   ft_file.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FILES_H
-# define	FILES_H
+#ifndef		FT_FILE_H
+# define	FT_FILE_H
 
+#include	<stdint.h>
+# include	<stddef.h>
 # include	<fcntl.h>
 # include	"ft.h"
 # include	"ft_list.h"
