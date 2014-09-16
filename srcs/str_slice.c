@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include	"bsq.h"
+
 char	*slice(char *fish, char knife)
 {
 	size_t	i;
@@ -23,7 +25,7 @@ char	*slice(char *fish, char knife)
 	//Malloc product string
 	tail = (char *)malloc((i + 1) * sizeof(char));
 	if (!tail)
-		return (tail);
+		exit(ft_puterror("slice()", "Not Enough Memory"));
 	//Copy into product string
 	j = 0;
 	while (j < i)

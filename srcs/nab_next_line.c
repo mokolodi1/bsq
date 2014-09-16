@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_file.h"
+#include	"bsq.h"
 
 size_t	nab_next_line(int const fd, char **line, char **overread)
 {

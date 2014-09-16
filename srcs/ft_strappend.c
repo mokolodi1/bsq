@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_file.h"
+#include	"bsq.h"
 
 void	ft_strappend(char **str, size_t str_len, char *add, size_t add_len)
 {
@@ -20,7 +20,7 @@ void	ft_strappend(char **str, size_t str_len, char *add, size_t add_len)
 	//Malloc output string
 	output = (char*)malloc(sizeof(char) * (str_len + add_len + 1));
 	if (!output)
-		return (output);
+		exit(ft_puterror("ft_strappend()", "Not Enough Memory"));
 	//Copy first string
 	i = 0;
 	while ((*str)[i] != '\0')
