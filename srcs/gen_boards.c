@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:56:46 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 19:24:32 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 19:31:33 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ t_board		*pay_as_you_go(t_terrain *terrain)
 	out = 0;
 	while (out < terrain->height)
 	{
-		ft_putstr("in first while\n");//FIX
 		in = 0;
 		curr = 0;
 		while (in < terrain->width)
