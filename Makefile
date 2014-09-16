@@ -6,7 +6,7 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/09 10:57:36 by tgauvrit         ###   ########.fr        #
+#    Updated: 2014/09/16 16:13:02 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ EX_COMPILED =	main.o \
 				strlen_list.o \
 				ft_strcat_sep.o \
 				ft_strappend.o \
-				get_next_line.o
+				get_next_line.o \
+				print_board.o
 
 FILE_SRC_DIR =	./srcs/lib/ft_file/
 
