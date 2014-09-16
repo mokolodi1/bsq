@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:47:22 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 17:17:24 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/16 18:17:15 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ typedef struct		s_board
 	size_t	height;
 }					t_board;
 
+void				print_terrain(t_terrain *terrain);
 void				print_board(t_board *board, int num_width);
+t_board				*init_board(t_terrain *terrain);
+t_board				*pay_as_you_go(t_terrain *terrain);
+t_board				*check_the_map(t_terrain *terrain);
 
 #endif
 
