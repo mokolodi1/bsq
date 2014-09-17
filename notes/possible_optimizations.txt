@@ -6,12 +6,15 @@
      By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+          
                                                   +#+#+#+#+#+   +#+             
      Created: 2014/09/16 17:52:20 by tfleming          #+#    #+#               
-     Updated: 2014/09/16 18:09:04 by tfleming         ###   ########.fr         
+     Updated: 2014/09/16 20:39:02 by tfleming         ###   ########.fr         
                                                                                 
 ********************************************************************************
 
 gen_boards.c
 rewrite so it mallocs one line at a time (less time holding memory)
+
+pay_as_you_go
+Optimize like cray
 
 function to free boards
 
