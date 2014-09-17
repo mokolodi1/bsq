@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 19:48:53 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/17 00:01:19 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/17 12:42:02 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ t_solution		*pay_as_you_go(t_board *board)
 		row++;
 	}
 	if (size)
+	{
+		ft_putstr("make_solution\n");//FIXME
 		return (make_solution(big_row, big_col, size + 1));
+	}
 	else
 		return (NULL);
 }
