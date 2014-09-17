@@ -19,11 +19,14 @@ int		ft_puterror(char *err_type, char *err_cause)
 		write(2, err_type, 1);
 		err_type++;
 	}
-	write(2, " error: ", 8);
-	while (*err_cause != '\0')
+	if (err_cause != NULL)
 	{
-		write(2, err_cause, 1);
-		err_cause++;
+		write(2, " error: ", 8);
+		while (*err_cause != '\0')
+		{
+			write(2, err_cause, 1);
+			err_cause++;
+		}
 	}
 	write(2, "\n", 1);
 	return (FT_PUTERROR_RETURN);
