@@ -13,8 +13,6 @@
 #ifndef		FT_FILE_H
 # define	FT_FILE_H
 
-#include	<stdint.h>
-# include	<stddef.h>
 # include	<fcntl.h>
 # include	"ft.h"
 # include	"ft_list.h"

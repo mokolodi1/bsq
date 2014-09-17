@@ -13,6 +13,8 @@
 #ifndef				BSQ_H
 # define			BSQ_H
 
+#include			<stdint.h>
+# include			<stddef.h>
 # include			"ft.h"
 # include			"ft_file.h"
 # include			"ft_list.h"
@@ -54,6 +56,7 @@ typedef struct		s_solution
 }					t_solution;
 
 size_t				nab_next_line(int const fd, char **line, char **spill);
+t_terrain			*nab_terrain(int fd);
 char				*str_slice(char *fish, char knife);
 void				ft_strappend(char **str, size_t str_len
 									, char *add, size_t add_len);
