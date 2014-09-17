@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:47:22 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/16 22:33:48 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/17 11:52:50 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_solution			*make_solution(int row, int col, int size);
 t_board				*pay_as_you_go_board(t_terrain *terrain);
 t_board				*check_the_map_board(t_terrain *terrain);
 void				fill_solution(t_terrain *terrain, t_solution *solution);
+void				build_castle(t_terrain *terrain);
 
 #endif
 
