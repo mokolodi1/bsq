@@ -38,6 +38,7 @@ EX_COMPILED =	main.o \
 				ft_strcat_sep.o \
 				ft_strappend.o \
 				str_slice.o \
+				nab_terrain.o \
 				nab_next_line.o \
 				gen_boards.o \
 				print_terrain.o \
