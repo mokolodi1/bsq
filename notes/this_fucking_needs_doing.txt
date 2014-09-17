@@ -1,0 +1,5 @@
+Remove testing functions
+Normification
+Implement "ranlib"
+Test with ARGV arguments: single & multiple
+Test with different BUF_SIZEs
