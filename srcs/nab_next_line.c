@@ -6,7 +6,7 @@
 /*   By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 16:44:18 by tgauvrit          #+#    #+#             */
-/*   Updated: 2014/09/15 16:44:19 by tgauvrit         ###   ########.fr       */
+/*   Updated: 2014/09/17 15:26:45 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,22 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 	//Check spill for leftover text
 	ft_putstr("Nab Next Line: SPILL CHECK: Beginning\n");//FIXME
 	line_len = 0;
+	ft_putstr("SPILL START VALUE:\n");//FIXME
+	ft_putstr(*spill);//FIXME
+	ft_putstr("\nEND\n");//FIXME
 	spill_len = ft_strlen(*spill);
-	if (spill_len > 0 && (line_len = ft_strlen(*line = str_slice(*spill, '\n'))) < spill_len)
+	if ((spill_len > 0) & ((line_len = ft_strlen(*line = str_slice(*spill, '\n'))) < spill_len))
 	{
 		ft_putstr("Nab Next Line: SPILL CHECK: Spill isn't empty\n");//FIXME
 		return (line_len);
 	}
 	else
 	{
-		ft_putstr("Nab Next Line: SPILL CHECK: Spill IS empty\n");//FIXME
-		*line = malloc(sizeof(char));
-		if (!*line)
-			exit(ft_puterror("nab_next_line()", "Not Enough Memory"));
-		**line = '\0';
+		ft_putstr("Nab Next Line: SPILL CHECK: Spill is empty now\n");//FIXME
+		// *line = malloc(sizeof(char));
+		// if (!*line)
+		//	exit(ft_puterror("nab_next_line()", "Not Enough Memory"));
+		// **line = '\0';
 	}
 	ft_putstr("Nab Next Line: SPILL CHECK: End\n");//FIXME
 
@@ -50,6 +53,8 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 		line_temp = *line;
 		//Look for line end
 		buf[ret] = '\0';
+		ft_putstr(buf);//FIXME
+		ft_putstr("\n");//FIXME
 		line_cut = str_slice(buf, '\n');
 		//Add selected text to line
 		cut_len = ft_strlen(line_cut);
@@ -76,5 +81,8 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 		return (line_len);
 	//Save spill
 	*spill = buf;
+	ft_putstr("SPILL FINAL VALUE:\n");//FIXME
+	ft_putstr(*spill);//FIXME
+	ft_putstr("\nEND\n");
 	return (line_len);
 }

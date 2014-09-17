@@ -6,7 +6,7 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/17 12:00:51 by tfleming         ###   ########.fr        #
+#    Updated: 2014/09/17 15:43:08 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,6 +121,6 @@ clean:
 	-/bin/rm -f $(COMPILED)
 
 fclean: clean
-	-/bin/rm -f $(NAME) $(FT_LIB) $(LIST_LIB)
+	-/bin/rm -f $(NAME) $(FT_LIB) $(LIST_LIB) $(FILE_LIB)
 
 re: fclean all
