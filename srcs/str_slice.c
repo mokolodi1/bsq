@@ -39,5 +39,10 @@ char	*str_slice(char *fish, char knife)
 	while (fish[i] != '\0')
 		fish[j++] = fish[++i];
 	//Return product string
+	ft_putstr("String Slice: START\nTail:\n\"");//FIXME
+	ft_putstr(tail);//FIXME
+	ft_putstr("\"\nRemainder:\n\"");//FIXME
+	ft_putstr(fish);//FIXME
+	ft_putstr("\"\nString Slice: END\n");//FIXME
 	return (tail);
 }
