@@ -6,7 +6,7 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/17 17:06:52 by tfleming         ###   ########.fr        #
+#    Updated: 2014/09/17 17:40:10 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,14 +108,14 @@ $(FILE_COMPILED): %.o: $(FILE_SRC_DIR)%.c
 
 $(LIST_LIB): $(LIST_COMPILED)
 	ar rc $(LIST_LIB) $(LIST_COMPILED) ;
-	ranlib $(FILE_LIB)
+	ranlib $(LIST_LIB)
 
 $(LIST_COMPILED): %.o: $(LIST_SRC_DIR)%.c
 	$(CC) -c $(FLAGS) -L. -l$(FT_LIB_NAME) -I $(HEADER_DIR) $< -o $@
 
 $(FT_LIB): $(FT_COMPILED)
 	ar rc $(FT_LIB) $(FT_COMPILED) ;
-	ranlib $(FILE_LIB)
+	ranlib $(FT_LIB)
 
 $(FT_COMPILED): %.o: $(FT_SRC_DIR)%.c
 	$(CC) -c $(FLAGS) -I $(HEADER_DIR) $< -o $@
