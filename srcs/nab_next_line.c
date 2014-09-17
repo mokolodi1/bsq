@@ -21,8 +21,11 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 	size_t			cut_len;
 	char			*line_cut;
 	char			*line_temp;
+	char			*spill_temp;
 
 	ft_putstr("\nNab Next Line: Start\n");//FIXME
+	//Store spill for FREE
+	spill_temp = *spill;
 	//Check spill for leftover text
 	ft_putstr("Nab Next Line: SPILL CHECK: Beginning\n");//FIXME
 	line_len = 0;
@@ -80,7 +83,8 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 	if (line_len == 0)
 		return (line_len);
 	//Save spill
-	*spill = buf;
+	*spill = ft_strdup(buf);
+	free(spill_temp);
 	ft_putstr("SPILL FINAL VALUE:\n");//FIXME
 	ft_putstr(*spill);//FIXME
 	ft_putstr("\nEND\n");

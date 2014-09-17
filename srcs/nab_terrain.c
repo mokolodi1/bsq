@@ -15,11 +15,8 @@
 t_terrain	*nab_terrain(int fd)
 {
 	t_terrain	*terranova;
-	char		*blank;
-	char		*blank_spill_a;
-	char		blank_spill_b[1];
-	char		**line;
-	char		**spill;
+	char		*line;
+	char		*spill;
 	size_t		line_len;
 	size_t		i;
 
@@ -30,24 +27,18 @@ t_terrain	*nab_terrain(int fd)
 		exit(ft_puterror("nab_terrain()", "Not Enough Memory (1)"));
 	//Initialize line because 'char**'s are stupid
 	ft_putstr("Nab Terrain: Line and Spill Initialization\n");//FIXME
-	blank = 0;
-	line = &blank;
-	blank_spill_a = 0;
-	blank_spill_b[0] = '\0';
-	spill = &blank_spill_a;
-	*spill = blank_spill_b;
+	line = "";
+	spill = malloc(sizeof(char) * 1);
+	*spill = '\0';
 	//Get info line
 	ft_putstr("Nab Terrain: Grabbing First Line\n");//FIXME
-	line_len = nab_next_line(fd, line, spill);
+	line_len = nab_next_line(fd, &line, &spill);
 	ft_putstr("Nab Terrain: FIRST LINE\n\"");//FIXME
-	ft_putstr(*line);//FIXME
+	ft_putstr(line);//FIXME
 	ft_putstr("\"\nNab Terrain: FIRST LINE LENGTH\n");//FIXME
 	ft_putnbr(line_len);
-	ft_putstr("\n");//FIXME
-	ft_putstr("\"\nNab Terrain: FIRST SPILL\n");//FIXME
-	ft_putstr(*spill);
-	ft_putstr("\nSpill before being fed: ");
-	ft_putstr(*spill);
+	ft_putstr("\nNab Terrain: Spill after first line: ");
+	ft_putstr(spill);
 	ft_putstr("\n");//FIXME
 	//Check for bogus: NULL means bogus terrain
 	ft_putstr("Nab Terrain: First Line Check\n");//FIXME
@@ -58,31 +49,31 @@ t_terrain	*nab_terrain(int fd)
 	}
 	//Get height
 	ft_putstr("Nab Terrain: Grabbing Height\n");//FIXME
-	terranova->height = ft_atoi(*line);
+	terranova->height = ft_atoi(line);
 	ft_putstr("Spill after atoi: ");
-	ft_putstr(*spill);
+	ft_putstr(spill);
 	ft_putchar('\n');
 	//Malloc map
 	ft_putstr("Nab Terrain: Mallocing Map\n");//FIXME
 	terranova->map = malloc(sizeof(char *) * terranova->height);
 	if (!terranova->map)
 		exit(ft_puterror("nab_terrain()", "Not Enough Memory (2)"));
-	ft_putstr("Spill after !terranova->map: ");
-	ft_putstr(*spill);
+	ft_putstr("Nab Terrain: Spill after !terranova->map: ");
+	ft_putstr(spill);
 	ft_putchar('\n');
 	//Get other variables
 	ft_putstr("Nab Terrain: Assigning Map Legend\n");//FIXME
-	terranova->empty = (*line)[line_len - 3];
-	terranova->obstacle = (*line)[line_len - 2];
-	terranova->full = (*line)[line_len - 1];
+	terranova->empty = (line)[line_len - 3];
+	terranova->obstacle = (line)[line_len - 2];
+	terranova->full = (line)[line_len - 1];
 	//Get first line
-	ft_putstr("Spill before being fed: ");
-	ft_putstr(*spill);
+	ft_putstr("Nab Terrain: Spill before second line: ");
+	ft_putstr(spill);
 	ft_putchar('\n');
 	ft_putstr("Nab Terrain: Grabbing Second Line\n");//FIXME
-	line_len = nab_next_line(fd, line, spill);
+	line_len = nab_next_line(fd, &line, &spill);
 	ft_putstr("Nab Terrain: SECOND LINE\n\"");//FIXME
-	ft_putstr(*line);//FIXME
+	ft_putstr(line);//FIXME
 	ft_putstr("\"\nNab Terrain: SECOND LINE LENGTH\n");//FIXME
 	ft_putnbr(line_len);
 	ft_putstr("\n");//FIXME
@@ -101,15 +92,15 @@ t_terrain	*nab_terrain(int fd)
 			return(NULL);//FIXME
 		}
 		//Insert line ('malloc'ed already!)
-		terranova->map[i] = *line;
+		terranova->map[i] = line;
 		//Clear line so terranova can't be modified by accident
-		line = &blank;
+		line = "";
 		//Get next line
-		line_len = nab_next_line(fd, line, spill);
+		line_len = nab_next_line(fd, &line, &spill);
 		ft_putstr("Nab Terrain: LINE ");//FIXME
 		ft_putnbr(i + 2);
 		ft_putstr("\n\"");//FIXME
-		ft_putstr(*line);//FIXME
+		ft_putstr(line);//FIXME
 		ft_putstr("\"\nNab Terrain: LINE LENGTH\n");//FIXME
 		ft_putnbr(line_len);
 		ft_putstr("\n");//FIXME
