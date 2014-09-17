@@ -6,7 +6,7 @@
 /*   By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/09 17:16:13 by tgauvrit          #+#    #+#             */
-/*   Updated: 2014/09/09 17:16:14 by tgauvrit         ###   ########.fr       */
+/*   Updated: 2014/09/17 11:56:20 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		main(int argc, char **argv)
 		if (neosolum == NULL)
 			exit(ft_puterror("map error\n", NULL));
 		//Do important stuff START
+		build_castle(neosolum);
 		//Do important stuff END
 		ft_putstr("Main: Print STDIN final terrain:\n");//FIXME
 		print_terrain(neosolum);
@@ -53,6 +54,7 @@ int		main(int argc, char **argv)
 		}
 		ft_putstr("Main: Read from ARGV loop end\n");//FIXME
 		//Do important stuff START
+		build_castle(neosolum);	// change
 		//Do important stuff END
 		ft_putstr("Main: Print ARGV final terrain:\n");//FIXME
 		print_terrain(neosolum);
