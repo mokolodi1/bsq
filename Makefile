@@ -6,7 +6,7 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/17 15:43:08 by tfleming         ###   ########.fr        #
+#    Updated: 2014/09/17 17:06:52 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,19 +100,22 @@ $(EX_COMPILED): %.o: $(EX_SRC_DIR)%.c
 	$(CC) -c $(FLAGS) -I $(HEADER_DIR) $< -o $@
 
 $(FILE_LIB): $(FILE_COMPILED)
-	ar rc $(FILE_LIB) $(FILE_COMPILED)
+	ar rc $(FILE_LIB) $(FILE_COMPILED) ;
+	ranlib $(FILE_LIB)
 
 $(FILE_COMPILED): %.o: $(FILE_SRC_DIR)%.c
 	$(CC) -c $(FLAGS) -L. -l$(FT_LIB_NAME) -l$(LIST_LIB_NAME) -I $(HEADER_DIR) $< -o $@
 
 $(LIST_LIB): $(LIST_COMPILED)
-	ar rc $(LIST_LIB) $(LIST_COMPILED)
+	ar rc $(LIST_LIB) $(LIST_COMPILED) ;
+	ranlib $(FILE_LIB)
 
 $(LIST_COMPILED): %.o: $(LIST_SRC_DIR)%.c
 	$(CC) -c $(FLAGS) -L. -l$(FT_LIB_NAME) -I $(HEADER_DIR) $< -o $@
 
 $(FT_LIB): $(FT_COMPILED)
-	ar rc $(FT_LIB) $(FT_COMPILED)
+	ar rc $(FT_LIB) $(FT_COMPILED) ;
+	ranlib $(FILE_LIB)
 
 $(FT_COMPILED): %.o: $(FT_SRC_DIR)%.c
 	$(CC) -c $(FLAGS) -I $(HEADER_DIR) $< -o $@
