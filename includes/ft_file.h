@@ -17,7 +17,7 @@
 # include	"ft.h"
 # include	"ft_list.h"
 
-# define	BUF_SIZE			10
+# define	BUF_SIZE			10000
 # define	FT_PUTERROR_RETURN	-1
 
 int			ft_puterror(char *err_type, char *err_cause);
