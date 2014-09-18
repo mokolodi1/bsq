@@ -10,84 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<time.h>
-#include	<stdio.h>
 #include	"bsq.h"
+
+int		main_stdin(void)
+{
+	t_terrain	*neosolum;
+
+	neosolum = nab_terrain(0);
+	if (neosolum == NULL)
+		return (ft_puterror("map error\n", NULL));
+	build_castle(neosolum);
+	print_terrain(neosolum);
+	if (neosolum)
+		native_americans(neosolum);
+	return (0);
+}
 
 int		main(int argc, char **argv)
 {
 	t_terrain	*neosolum;
-	int	i;
-	int	fd;
-	clock_t start;
-	double nab_terrain_time;
-	double build_castle_time;
-	double print_terrain_time;
+	int			i;
+	int			fd;
 
-	ft_putstr("Main: Start\n");//FIXME
-	nab_terrain_time = 0;
-	build_castle_time = 0;
-	print_terrain_time = 0;
-	start = clock();
 	if (argc == 1)
-	{
-		ft_putstr("Main: Read from STDIN\n");//FIXME
-		neosolum = nab_terrain(0);
-		nab_terrain_time = ((double)((clock_t)clock() - start)) / CLOCKS_PER_SEC;//FIXME
-		if (neosolum == NULL)
-			return (ft_puterror("map error\n", NULL));
-		//Do important stuff START
-		ft_putstr("START IMPORTANT STUFF\n");
-		build_castle(neosolum);
-		build_castle_time = ((double)((clock_t)clock() - start)) / CLOCKS_PER_SEC;//FIXME
-		ft_putstr("END IMPORTANT STUFF\n");
-		//Do important stuff END
-		ft_putstr("Main: Print STDIN final terrain:\n");//FIXME
-		print_terrain(neosolum);
-		print_terrain_time = ((double)((clock_t)clock() - start)) / CLOCKS_PER_SEC;//FIXME
-		ft_putstr("Main: Free the terrain with scalping...\n");//FIXME
-		if (neosolum)
-			native_americans(neosolum);
-		ft_putstr("Main: Read from STDIN over\n");//FIXME
-	}
+		return (main_stdin());
 	i = 0;
 	while (++i < argc)
 	{
-		ft_putstr("Main: Read from ARGV\n");//FIXME
-		ft_putstr("File: ");//FIXME
-		ft_putstr(argv[i]);//FIXME
-		write(1, "\n", 1);//FIXME
 		fd = open(argv[i], O_RDONLY);
-		if (fd == -1)
-		{
-			ft_putstr("map error\n");
+		if (fd == -1 && ft_puterror("map error\n", NULL))
 			continue;
-		}
 		if ((neosolum = nab_terrain(fd)) == NULL)
 		{
 			ft_putstr("map error\n");
 			continue;
 		}
-		if (close(fd) == -1)
-		{
-			ft_putstr("map error\n");
+		if (close(fd) == -1 && ft_puterror("map error\n", NULL))
 			continue;
-		}
-		ft_putstr("Main: Read from ARGV loop end\n");//FIXME
-		//Do important stuff START
-		ft_putstr("START IMPORTANT STUFF\n");
-		build_castle(neosolum);	// change
-		ft_putstr("END IMPORTANT STUFF\n");
-		//Do important stuff END
-		ft_putstr("Main: Print ARGV final terrain:\n");//FIXME
+		build_castle(neosolum);
 		print_terrain(neosolum);
-		ft_putstr("Main: Free the terrain with scalping...\n");//FIXME
 		if (neosolum)
 			native_americans(neosolum);
 	}
-	ft_putstr("Main: END\n");//FIXME
-	printf("nab_terrain_time:   %f\n", nab_terrain_time);//FIXME
-	printf("build_castle_time:  %f\n", build_castle_time - nab_terrain_time);//FIXME
-	printf("print_terrain_time: %f\n", print_terrain_time - build_castle_time);//FIXME
 	return (0);
 }

@@ -74,6 +74,5 @@ int					gen_line(t_terrain *terrain, int *line
 								, int line_num, int loc);
 t_solution			*free_board(t_board *board, t_solution *sol);
 
-
 #endif
 

@@ -21,11 +21,9 @@ char	*str_slice(char *fish, char knife)
 	i = 0;
 	while (fish[i] != knife && fish[i] != '\0')
 		i++;
-	//Malloc product string
 	tail = malloc((i + 1) * sizeof(char));
 	if (!tail)
 		exit(ft_puterror("slice()", "Not Enough Memory"));
-	//Copy into product string
 	j = 0;
 	while (j < i)
 	{

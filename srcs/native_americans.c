@@ -27,13 +27,9 @@ void	burn_forts(char **map, size_t forts)
 
 void	native_americans(t_terrain *free_land)
 {
-	// ft_putstr("BURN!\n");
 	if (free_land == NULL)
 		return ;
-	// ft_putstr("BURN!!\n");
 	if (free_land->map != NULL)
 		burn_forts(free_land->map, free_land->height);
-	// ft_putstr("BURN!!!\n");
 	free(free_land);
-	// ft_putstr("BURN!!!!\n");
 }
