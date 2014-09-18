@@ -18,19 +18,17 @@
 
 void		print_terrain(t_terrain *terrain)
 {
-	size_t outer;
-	size_t inner;
+	size_t	outer;
+	size_t	height;
+	size_t	width;
 
+	height = terrain->height;
+	width = terrain->width;
 	outer = 0;
-	while (outer < terrain->height)
+	while (outer < height)
 	{
-		inner = 0;
-		while (inner < terrain->width)
-		{
-			ft_putchar(terrain->map[outer][inner]);
-			inner++;
-		}
-		ft_putchar('\n');
+		write(1, terrain->map[outer], width);
+		write(1, "\n", 1);
 		outer++;
 	}
 }
