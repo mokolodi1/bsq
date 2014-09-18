@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 19:06:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 18:58:52 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 20:03:43 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int			update_solution(t_solution *sol, int row, int col
 	sol->size++;
 	sol->row = row;
 	sol->col = col;
-	if (row + sol->size < board->height && col + sol->size < board->width)
+	if (row + sol->size - 1 <= board->height
+			&& col + sol->size - 1 <= board->width)
 	{
 		//	ft_putstr("row + sol->size: ");
 		//	ft_putnbr(row + sol->size);

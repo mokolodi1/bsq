@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 18:14:38 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 19:03:01 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 20:43:24 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int				shift_int_star(t_terrain *terr, t_board *board, int r, int size)
 		//ft_putnbr(board->width);
 		//ft_putstr("\n");
 		return (gen_line(terr, board->map[r + size + 1], r + size + 1
-						 , board->width - 1));
+						 , board->width - 1));	// CHECK
 	}
 	// here is where I can do stuff if we already found the largest square
 	return (0);
@@ -140,16 +140,29 @@ t_solution		*check_the_map(t_terrain *terr)
 		ft_putchar('\n');*/
 		while (col + sol->size < board->width)
 		{
+			/*ft_putstr("THIS IS THE STATEMENT: \n");
+			ft_putnbr(col);
+			ft_putchar(' ');
+			ft_putnbr(sol->size);
+			ft_putchar(' ');
+			ft_putnbr(board->width);
+			ft_putchar('\n');*/
 //			ft_putstr("check_the_map second while\n");//FIXME
 			if (check_board(board, row, col, sol->size + 1)
+				&& col + sol->size + 1 < board->width
+				&& row + sol->size + 1 < board->height
 				&& update_solution(sol, row, col, board))
 			{
-				//ft_putstr("check_the_map inside IF: row=");//FIXME
-				//ft_putnbr(row);
-				//ft_putstr(", col=");
-				//ft_putnbr(col);
-				//ft_putstr("\n");
-				if (gen_line(terr, board->map[row + sol->size]
+				/*ft_putstr("check_the_map inside IF: row=");//FIXME
+				ft_putnbr(row);
+				ft_putstr(", col=");
+				ft_putnbr(col);
+				ft_putstr("\nsol->size: ");
+				ft_putnbr(sol->size);
+				ft_putstr("\nboard->height=");
+				ft_putnbr(board->height);
+				ft_putstr("\n");*/
+				if (gen_line(terr, board->map[row + sol->size]// CHECK
 							  , row + sol->size, board->width - 1) == 1)
 				{
 					//				ft_putstr("INSIDE SECOND IF\n");
