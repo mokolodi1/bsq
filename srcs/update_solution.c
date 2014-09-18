@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 19:06:11 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 15:44:34 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 18:58:52 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,23 @@
 int			update_solution(t_solution *sol, int row, int col
 							, t_board *board)
 {
-	//ft_putstr("update solution\n");
+//	ft_putstr("update solution\n");
 	sol->size++;
 	sol->row = row;
 	sol->col = col;
-	if (row + sol->size  < board->height
-				&& col + sol->size < board->width)
+	if (row + sol->size < board->height && col + sol->size < board->width)
 	{
-		//ft_putstr("row + sol->size: ");
-		//ft_putnbr(row + sol->size);
-		//ft_putchar('\n');
+		//	ft_putstr("row + sol->size: ");
+		//	ft_putnbr(row + sol->size);
+		//	ft_putchar('\n');
 		board->map[row + sol->size] = malloc(sizeof(int) * board->width);
 		if (!board->map[row + sol->size])
 			exit(ft_puterror("update_sollution()", "Not Enough Memory"));
 		return (1);
 	}
 	else
+	{
+		//	ft_putstr("RETURNED 0 UPDATE SOLUTION\n");
 		return (0);
+	}
 }

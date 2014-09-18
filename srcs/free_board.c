@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/18 16:27:36 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 16:51:29 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 19:17:05 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,22 @@ t_solution			*free_board(t_board *board, t_solution *sol)
 {
 	int i;
 
-	i = board->height - sol->size - 1;
-	while (i < board->height)
+	if (board == NULL)
+		return (sol);
+	if (board->map != NULL)
 	{
-		free(board->map[i]);
-		i++;
+		if (board->height == sol->size)
+			i = 0;
+		else
+			i = board->height - sol->size - 1;
+		while (i < board->height)
+		{
+			if (board->map[i])
+				free(board->map[i]);
+			i++;
+		}
+		free(board->map);
 	}
-	free(board->map);
 	free(board);
 	return (sol);
 }

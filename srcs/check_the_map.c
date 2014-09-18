@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 18:14:38 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 16:54:33 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 19:03:01 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,28 @@ int				check_board(t_board *board, int row, int col, int size)
 {
 	int i;
 
-	//ft_putstr("check_board: \n");
+//	ft_putstr("check_board\n");
 	//print_board(board, 3, row + size);
 	
 	i = 0;
 	while (i < size)
 	{
 		if (board->map[row + i][col] < size)
+		{
+			//		ft_putstr("check_board: about to return 0\n");
 			return (0);
+		}
 		i++;
 	}
+//	ft_putstr("check_board: about to return 1\n");
 	return (1);
 }
 
 int				shift_int_star(t_terrain *terr, t_board *board, int r, int size)
 {
-	if (r + size + 1 < board->height)
+	if (r + size + 1 < board->height)// && c + size + 1 < board->width)//changed
 	{
+//		ft_putstr("shift_int_star inside if\n");
 		board->map[r + size + 1] = board->map[r];
 		//ft_putstr("shift int star: cool stuff\n");
 		//print_array(board->map[r + size + 1], 3);
@@ -76,6 +81,7 @@ t_solution		*make_solution(t_board *board)
 		exit(ft_puterror("make_solution()", "Not Enough Memory"));
 	new_sol->size = -1;
 	update_solution(new_sol, 0, 0, board);
+//	ft_putstr("make_solution made new solution\n");
 	return (new_sol);
 }
 
@@ -124,9 +130,17 @@ t_solution		*check_the_map(t_terrain *terr)
 	while (row + sol->size < board->height)
 	{
 		col = 0;
-		//ft_putstr("check_the_map inside first while\n");//FIXME
+		/*ft_putstr("check_the_map first while\n");//FIXME
+		ft_putstr("check_the_map second thing printed\n");//FIXME
+		ft_putnbr(col);
+		ft_putchar(' ');
+		ft_putnbr(sol->size);
+		ft_putchar(' ');
+		ft_putnbr(board->width);
+		ft_putchar('\n');*/
 		while (col + sol->size < board->width)
 		{
+//			ft_putstr("check_the_map second while\n");//FIXME
 			if (check_board(board, row, col, sol->size + 1)
 				&& update_solution(sol, row, col, board))
 			{
@@ -138,7 +152,7 @@ t_solution		*check_the_map(t_terrain *terr)
 				if (gen_line(terr, board->map[row + sol->size]
 							  , row + sol->size, board->width - 1) == 1)
 				{
-					//ft_putstr("INSIDE SECOND IF\n");
+					//				ft_putstr("INSIDE SECOND IF\n");
 					return (map_error(board, sol, row));
 				}
 			}
@@ -152,6 +166,7 @@ t_solution		*check_the_map(t_terrain *terr)
 				col++;
 			}
 		}
+//		ft_putstr("check_the_map before shift_int_star\n");
 		if (shift_int_star(terr, board, row, sol->size))
 			return (map_error(board, sol, row));
 		row++;
