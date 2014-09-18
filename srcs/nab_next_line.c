@@ -28,9 +28,9 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 	//Check spill for leftover text
 	line_len = 0;
 	spill_len = ft_strlen(*spill);
-	if ((spill_len > 0) & ((line_len = ft_strlen(*line = str_slice(*spill, '\n'))) < spill_len))
+	if ((spill_len > 0) & ((line_len =
+		ft_strlen(*line = str_slice(*spill, '\n'))) < spill_len))
 		return (line_len);
-
 	//Read until a whole line is recovered
 	while ((ret = read(fd, buf, BUF_SIZE)) > 0)
 	{
@@ -38,6 +38,8 @@ size_t	nab_next_line(int const fd, char **line, char **spill)
 		line_temp = *line;
 		//Look for line end
 		buf[ret] = '\0';
+		if ((ret == 0) || (buf[ret - 1] == '\0' && buf[ret - 2] != '\n'))
+			return (0);
 		line_cut = str_slice(buf, '\n');
 		//Add selected text to line
 		cut_len = ft_strlen(line_cut);
