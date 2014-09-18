@@ -13,7 +13,7 @@
 #ifndef				BSQ_H
 # define			BSQ_H
 
-#include			<stdint.h>
+# include			<stdint.h>
 # include			<stddef.h>
 # include			"ft.h"
 # include			"ft_file.h"
