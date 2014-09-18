@@ -18,7 +18,7 @@
 # include	"ft_list.h"
 
 # define	BUF_SIZE			10000
-# define	FT_PUTERROR_RETURN	-1
+# define	FT_PUTERROR_RETURN	0
 
 int			ft_puterror(char *err_type, char *err_cause);
 int			read_to_out(int fd);

@@ -19,7 +19,8 @@ int		main_stdin(void)
 	neosolum = nab_terrain(0);
 	if (neosolum == NULL)
 		return (ft_puterror("map error\n", NULL));
-	build_castle(neosolum);
+	if (build_castle(neosolum) == 1)
+		return (ft_puterror("map error\n", NULL));
 	print_terrain(neosolum);
 	if (neosolum)
 		native_americans(neosolum);
@@ -40,14 +41,13 @@ int		main(int argc, char **argv)
 		fd = open(argv[i], O_RDONLY);
 		if (fd == -1 && ft_puterror("map error\n", NULL))
 			continue;
-		if ((neosolum = nab_terrain(fd)) == NULL)
-		{
-			ft_putstr("map error\n");
+		if ((neosolum = nab_terrain(fd)) == NULL
+			&& ft_puterror("map error\n", NULL))
 			continue;
-		}
 		if (close(fd) == -1 && ft_puterror("map error\n", NULL))
 			continue;
-		build_castle(neosolum);
+		if (build_castle(neosolum) == 1 && ft_puterror("map error\n", NULL))
+			continue;
 		print_terrain(neosolum);
 		if (neosolum)
 			native_americans(neosolum);
