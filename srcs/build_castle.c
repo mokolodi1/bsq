@@ -6,59 +6,52 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 11:47:07 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 20:46:13 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 23:21:45 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"bsq.h"
 
-/*
-**	build_castle
-**	Returns 1 if there is a problem with the board (map error)
-**	Screw maps with one-size dimensions...
-*/
-
-/*int			one_by_one(t_terrain *terrain)
+int			one_by_one(t_terrain *terrain)
 {
-	char	prick;
-
-	prick = terrain->map[0][0];
-	if (prick == terrain->obstacle)
-		return (1);
-	if (prick == terrain->empty)
+	if (terrain->map[0][0] == terrain->obstacle)
 	{
-		terrain->map[0][0] = terrain->full;
-		return (0);
+		
 	}
-	else
-		return (1);
-}
-
-int			height_one(t_terrain *terrain)
-{
-	(void)terrain;
-	ft_putstr("HEIGHT = 1!\n");
 	return (0);
 }
 
 int			width_one(t_terrain *terrain)
 {
 	(void)terrain;
-	ft_putstr("WIDTH = 1!\n");
 	return (0);
-}*/
+}
+
+int			height_one(t_terrain *terrain)
+{
+	(void)terrain;
+	return (0);
+}
+
+t_solution	*stupid(t_terrain *terr)
+{
+	t_board		*board;
+
+	board = NULL;
+	return (check_the_map(terr, 0, 0, board));
+}
 
 int			build_castle(t_terrain *terrain)
 {
 	t_solution *solution;
 
-	/*if (terrain->height == 1 && terrain->width == 1)
+	if (terrain->height == 1 && terrain->width == 1)
 		return (one_by_one(terrain));
 	if (terrain->height == 1)
 		return (height_one(terrain));
 	if (terrain->width == 1)
-	return (width_one(terrain));*/
-	solution = check_the_map(terrain);
+		return (width_one(terrain));
+	solution = stupid(terrain);
 	if (solution->size != 0)
 	{
 		fill_solution(terrain, solution);

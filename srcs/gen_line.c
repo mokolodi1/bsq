@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 22:40:54 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 20:54:30 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 23:00:13 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,11 @@ int				gen_line(t_terrain *terr, int *line, int line_num, int loc)
 	while (loc >= 0)
 	{
 		if (chars[loc] == empty)
-		{
 			none_count++;
-		}
 		else if (chars[loc] == obstacle)
-		{
 			none_count = 0;
-		}
 		else
-		{
 			return (1);
-		}
 		line[loc] = none_count;
 		loc--;
 	}
