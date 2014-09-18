@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:47:22 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/17 11:52:50 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 16:34:37 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ typedef struct		s_terrain
 typedef struct		s_board
 {
 	int		**map;
-	size_t	width;
-	size_t	height;
+	int		width;
+	int		height;
+	int		rows_gened;
 }					t_board;
 
 /*
@@ -61,16 +62,20 @@ char				*str_slice(char *fish, char knife);
 void				ft_strappend(char **str, size_t str_len
 									, char *add, size_t add_len);
 void				print_terrain(t_terrain *terrain);
-void				print_board(t_board *board, int num_width);
-t_board				*init_board(t_terrain *terrain, int extra_w);
-t_board				*check_the_map(t_terrain *terrain);
-t_solution			*pay_as_you_go(t_board *board);
-t_solution			*make_solution(int row, int col, int size);
-t_board				*pay_as_you_go_board(t_terrain *terrain);
-t_board				*check_the_map_board(t_terrain *terrain);
+void				print_board(t_board *board, int num_width, int n_height);
+void				native_americans(t_terrain *free_land);
+
+int					build_castle(t_terrain *terrain);
+t_solution			*check_the_map(t_terrain *terrain);
 void				fill_solution(t_terrain *terrain, t_solution *solution);
 void				build_castle(t_terrain *terrain);
-void				native_americans(t_terrain *free_land);
+int					update_solution(t_solution *sol
+									, int row, int col, t_board *board);
+t_board				*make_board(t_terrain *terrain);
+int					gen_line(t_terrain *terrain, int *line
+								, int line_num, int loc);
+t_solution			*free_board(t_board *board, t_solution *sol);
+
 
 #endif
 

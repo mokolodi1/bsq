@@ -6,7 +6,7 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/17 17:40:10 by tfleming         ###   ########.fr        #
+#    Updated: 2014/09/18 16:25:33 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,14 +40,16 @@ EX_COMPILED =	main.o \
 				str_slice.o \
 				nab_terrain.o \
 				nab_next_line.o \
-				gen_boards.o \
 				print_terrain.o \
 				print_board.o \
-				pay_as_you_go.o \
-				make_solution.o \
+				check_the_map.o \
 				fill_solution.o \
 				build_castle.o \
-				native_americans.o
+				native_americans.o \
+				update_solution.o \
+				gen_line.o \
+				make_board.o \
+				free_board.o
 
 FILE_SRC_DIR =	./srcs/lib/ft_file/
 
