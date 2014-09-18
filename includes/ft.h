@@ -26,9 +26,11 @@ char	*ft_strcpy(char *dest, char *src);
 char	*ft_strdup(char *src);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_str_is_numeric(char *str);
+int		ft_str_is_printable(char *str);
 void	ft_putnbr(int num);
 void	ft_swap(int *a, int *b);
 int		ft_atoi(char *str);
+int		ft_str_int_len(char *str);
 int		ft_iterative_power(int nb, int power);
 
 #endif
