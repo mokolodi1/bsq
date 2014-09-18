@@ -70,6 +70,7 @@ t_board				*pay_as_you_go_board(t_terrain *terrain);
 t_board				*check_the_map_board(t_terrain *terrain);
 void				fill_solution(t_terrain *terrain, t_solution *solution);
 void				build_castle(t_terrain *terrain);
+void				native_americans(t_terrain *free_land);
 
 #endif
 

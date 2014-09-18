@@ -43,6 +43,8 @@ int		main(int argc, char **argv)
 		ft_putstr("Main: Print STDIN final terrain:\n");//FIXME
 		print_terrain(neosolum);
 		print_terrain_time = ((double)((clock_t)clock() - start)) / CLOCKS_PER_SEC;//FIXME
+		ft_putstr("Main: Free the terrain with scalping...\n");//FIXME
+		native_americans(neosolum);
 		ft_putstr("Main: Read from STDIN over\n");//FIXME
 	}
 	i = 0;
@@ -74,6 +76,8 @@ int		main(int argc, char **argv)
 		//Do important stuff END
 		ft_putstr("Main: Print ARGV final terrain:\n");//FIXME
 		print_terrain(neosolum);
+		ft_putstr("Main: Free the terrain with scalping...\n");//FIXME
+		native_americans(neosolum);
 	}
 	ft_putstr("Main: END\n");//FIXME
 	printf("nab_terrain_time:   %f\n", nab_terrain_time);//FIXME

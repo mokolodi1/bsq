@@ -70,6 +70,6 @@ t_terrain	*nab_terrain(int fd)
 	}
 	//Check for extra text, and thus if terrain is bogus
 	if (line_len != 0)
-		return(NULL);//FIXME
+		return (NULL);//FIXME
 	return (terranova);
 }

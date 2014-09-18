@@ -32,4 +32,3 @@ void		print_terrain(t_terrain *terrain)
 		outer++;
 	}
 }
-

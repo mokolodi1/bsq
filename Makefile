@@ -46,7 +46,8 @@ EX_COMPILED =	main.o \
 				pay_as_you_go.o \
 				make_solution.o \
 				fill_solution.o \
-				build_castle.o
+				build_castle.o \
+				native_americans.o
 
 FILE_SRC_DIR =	./srcs/lib/ft_file/
 
