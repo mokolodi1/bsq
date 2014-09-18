@@ -28,13 +28,17 @@ t_terrain	*nab_terrain(int fd)
 	line = "";
 	spill = malloc(sizeof(char) * 1);
 	*spill = '\0';
-	//Get info line
+	//Get 'info' line
 	line_len = nab_next_line(fd, &line, &spill);
-	//Check for bogus: NULL means bogus terrain
-	if (line_len < 4)//And if consists of non-negative number and then three printable char: FIXME
-		return(NULL);//FIXME
-	//Get height
-	terranova->height = ft_atoi(line);
+	//Check for bogus: START (NULL means bogus terrain)
+	//Checks against negative/non-numbers/extra characters/non-printable characters
+	if (line_len != (size_t)ft_str_int_len(line) + 3
+						|| !ft_str_is_printable(line + (line_len - 3)))
+		return (NULL);
+	//Check for bogus: END
+	//Get height, check zero value
+	if (!(terranova->height = ft_atoi(line)))
+		return (NULL);
 	//Malloc map
 	terranova->map = malloc(sizeof(char *) * terranova->height);
 	if (!terranova->map)
@@ -43,7 +47,11 @@ t_terrain	*nab_terrain(int fd)
 	terranova->empty = (line)[line_len - 3];
 	terranova->obstacle = (line)[line_len - 2];
 	terranova->full = (line)[line_len - 1];
+	//Get second line
 	line_len = nab_next_line(fd, &line, &spill);
+	//Get width, check zero value
+	if (line_len == 0)
+		return (NULL);
 	terranova->width = line_len;
 	//Loop through lines "height" times
 	i = 0;
