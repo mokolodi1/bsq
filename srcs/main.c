@@ -6,7 +6,7 @@
 /*   By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/09 17:16:13 by tgauvrit          #+#    #+#             */
-/*   Updated: 2014/09/17 11:56:20 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 17:33:18 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int		main(int argc, char **argv)
 		if (neosolum == NULL)
 			return (ft_puterror("map error\n", NULL));
 		//Do important stuff START
+		ft_putstr("START IMPORTANT STUFF\n");
 		build_castle(neosolum);
 		build_castle_time = ((double)((clock_t)clock() - start)) / CLOCKS_PER_SEC;//FIXME
+		ft_putstr("END IMPORTANT STUFF\n");
 		//Do important stuff END
 		ft_putstr("Main: Print STDIN final terrain:\n");//FIXME
 		print_terrain(neosolum);
