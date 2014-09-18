@@ -26,7 +26,7 @@ FILE_LIB =		lib$(FILE_LIB_NAME).a
 
 CC =			gcc
 
-FLAGS =			-Wall -Werror -Wextra
+FLAGS =			-Wall -Werror -Wextra -O3
 
 HEADER_DIR =	./includes/
 
@@ -84,6 +84,7 @@ FT_COMPILED =	ft_atoi.o \
 				ft_strlowcase.o \
 				ft_strupcase.o \
 				ft_str_is_numeric.o \
+				ft_str_is_printable.o \
 				ft_swap.o
 
 COMPILED =		$(FT_COMPILED) \
