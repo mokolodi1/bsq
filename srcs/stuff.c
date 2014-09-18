@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/18 23:04:47 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 23:05:07 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 23:40:21 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int				check_board(t_board *board, int row, int col, int size)
 
 int				shift_int_star(t_terrain *terr, t_board *board, int r, int size)
 {
-	ft_putstr("shift int star\n");
 	if (r + size + 1 < board->height)
 	{
 		board->map[r + size + 1] = board->map[r];
