@@ -6,7 +6,7 @@
 /*   By: tfleming <tfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 13:47:22 by tfleming          #+#    #+#             */
-/*   Updated: 2014/09/18 16:34:37 by tfleming         ###   ########.fr       */
+/*   Updated: 2014/09/18 17:27:54 by tfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,11 @@ char				*str_slice(char *fish, char knife);
 void				ft_strappend(char **str, size_t str_len
 									, char *add, size_t add_len);
 void				print_terrain(t_terrain *terrain);
-void				print_board(t_board *board, int num_width, int n_height);
 void				native_americans(t_terrain *free_land);
 
 int					build_castle(t_terrain *terrain);
 t_solution			*check_the_map(t_terrain *terrain);
 void				fill_solution(t_terrain *terrain, t_solution *solution);
-void				build_castle(t_terrain *terrain);
 int					update_solution(t_solution *sol
 									, int row, int col, t_board *board);
 t_board				*make_board(t_terrain *terrain);

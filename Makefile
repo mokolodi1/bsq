@@ -6,7 +6,7 @@
 #    By: tgauvrit <tgauvrit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/09/09 10:54:05 by tgauvrit          #+#    #+#              #
-#    Updated: 2014/09/18 16:25:33 by tfleming         ###   ########.fr        #
+#    Updated: 2014/09/18 17:28:08 by tfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ EX_COMPILED =	main.o \
 				nab_terrain.o \
 				nab_next_line.o \
 				print_terrain.o \
-				print_board.o \
 				check_the_map.o \
 				fill_solution.o \
 				build_castle.o \
